@@ -54,7 +54,13 @@
 
                         // 課題4-3. ここにコードを書く
                         // 在庫用のエレメントを抽出し、HTML内の個数を更新
-                    } else console.log(this.name+"は商品の在庫がないため購入できません。");
+                        const stockCell = document.getElementById(`stock${this.id}`);
+                                                     if (stockCell) {
+                                                        stockCell.textContent = this.stock;
+                    }
+                    } else {
+                        console.log(this.name+"は商品の在庫がないため購入できません。");
+                    }
                 }
             } // End of Item class
 
